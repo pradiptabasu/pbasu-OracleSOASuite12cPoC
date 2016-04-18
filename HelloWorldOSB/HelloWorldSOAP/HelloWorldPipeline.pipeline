@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="HelloWorldSOAP/Resources/HelloWorld"/>
+            <con:binding>
+                <con:name>Hello_Binding</con:name>
+                <con:namespace>http://www.examples.com/wsdl/HelloService.wsdl</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-ab83104.1a40a33c.0.152a1e21706.N8000">
+            <con:stage id="_StageId-ab83104.1a40a33c.0.152a1e21706.N7ffe" name="RequestStage">
+                <con:context>
+                    <con1:userNsDecl prefix="urn" namespace="urn:examples:helloservice"/>
+                </con:context>
+                <con:actions></con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-ab83104.1a40a33c.0.152a1e21706.N7fff">
+            <con:stage id="_StageId-ab83104.1a40a33c.0.152a1e21706.N7ffd" name="ResponseStage">
+                <con:context>
+                    <con1:userNsDecl prefix="urn" namespace="urn:examples:helloservice"/>
+                </con:context>
+                <con:actions>
+                    <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-ab83104.2552839c.0.152a57efa75.N7fcb</con1:id>
+                        <con2:location>
+                            <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                            <con1:xqueryText>&lt;sayHelloResponse>&lt;greeting>{fn:concat('Hello ', $body/urn:sayHello/firstName)}&lt;/greeting>&lt;/sayHelloResponse></con1:xqueryText>
+                        </con2:expr>
+                    </con2:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>request-ab83104.1a40a33c.0.152a1e21706.N8000</con:request>
+                <con:response>response-ab83104.1a40a33c.0.152a1e21706.N7fff</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

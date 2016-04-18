@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adapter-config name="write_xml_FILE" adapter="file" wsdlLocation="write_xml_FILE.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/FileAdapter"/>
+  <endpoint-interaction portType="Write_ptt" operation="Write">
+    <interaction-spec className="oracle.tip.adapter.file.outbound.FileInteractionSpec">
+      <property name="LogicalDirectory" value="WRITE_FILE_DIR"/>
+      <property name="Append" value="false"/>
+      <property name="FileNamingConvention" value="output%SEQ%.xml"/>
+      <property name="NumberMessages" value="1"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

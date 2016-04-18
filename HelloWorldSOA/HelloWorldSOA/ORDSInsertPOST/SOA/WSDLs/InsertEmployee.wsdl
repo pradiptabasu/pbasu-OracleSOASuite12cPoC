@@ -1,0 +1,30 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="InsertEmployee"
+     targetNamespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee"
+     xmlns:ns1="http://www.example.org"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+    >
+    <plnk:partnerLinkType name="InsertEmployee">
+        <plnk:role name="InsertEmployeeProvider" portType="client:InsertEmployee"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.example.org" schemaLocation="../Schemas/Employee.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="InsertEmployeeRequestMessage">
+        <wsdl:part name="payload" element="ns1:employeeList"/>
+    </wsdl:message>
+    <wsdl:message name="InsertEmployeeResponseMessage">
+        <wsdl:part name="payload" element="ns1:employeeList"/>
+    </wsdl:message>
+    <wsdl:portType name="InsertEmployee">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:InsertEmployeeRequestMessage"/>
+            <wsdl:output message="client:InsertEmployeeResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

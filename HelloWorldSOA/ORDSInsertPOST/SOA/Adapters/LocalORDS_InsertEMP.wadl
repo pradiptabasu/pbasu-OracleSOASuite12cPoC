@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_InsertEMP" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="LocalORDS_InsertEMP">RestReference</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_InsertEMP" elementFormDefault="qualified">
+            <element name="empty">
+                <complexType/>
+            </element>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/ords/pradiptatestworkspace/localorcl/testdbuser/insertempPOST">
+         <method name="POST" soa:wsdlOperation="InsertEMP">
+            <request/>
+            <response status="200"/>
+         </method>
+      </resource>
+   </resources>
+</application>

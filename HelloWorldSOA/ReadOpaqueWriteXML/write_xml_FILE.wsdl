@@ -1,0 +1,26 @@
+<wsdl:definitions
+     name="write_xml_FILE"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/write_xml_FILE"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/write_xml_FILE"
+     xmlns:imp1="http://myfilereader.smeets.nl/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+    >
+  <plt:partnerLinkType name="Write_plt" >
+    <plt:role name="Write_role" >
+      <plt:portType name="tns:Write_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:import namespace="http://myfilereader.smeets.nl/" location="Iparsefile.wsdl"/>
+    <wsdl:types>
+    </wsdl:types>
+    <wsdl:message name="Write_msg">
+        <wsdl:part name="body" element="imp1:parseResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="Write_ptt">
+        <wsdl:operation name="Write">
+            <wsdl:input message="tns:Write_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

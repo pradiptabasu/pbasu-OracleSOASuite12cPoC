@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="insertemployee_client_ep">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="983" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="976" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertemployee_client_ep" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="employeeinsert_oneway_client_ep">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="employeeinsert_oneway_client_ep" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/EmployeeInsert_OneWay#wsdl.interface(EmployeeInsert_OneWay)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_GET_PathParam_ReturnXML">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="157" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="150" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_GET_PathParam_ReturnXML" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_GET_PathParam_ReturnJSON">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="275" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="268" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_GET_PathParam_ReturnJSON" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_GET_PathParam_ReturnNoPayload">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="393" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="386" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_GET_PathParam_ReturnNoPayload" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_POST_XML_ReturnXML">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="511" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="504" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_POST_XML_ReturnXML" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_POST_JSON_ReturnXML">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="629" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="622" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_POST_JSON_ReturnXML" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_POST_XML_ReturnJSON">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="747" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="740" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_POST_XML_ReturnJSON" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="insertEmployeeFull_REST_POST_Multiple_Multiple">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="865" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="858" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="insertEmployeeFull_REST_POST_Multiple_Multiple" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="LocalORDS_InsertEMP">
+        <dgm:body borderWidth="2" arcRad="20" X="765" Y="41" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="755" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="LocalORDS_InsertEMP" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_InsertEMP#wsdl.interface(LocalORDS_InsertEMP_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>InsertEMP</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="LocalORDS_Insert_FullEmployee">
+        <dgm:body borderWidth="2" arcRad="20" X="765" Y="570" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="755" Y="563" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="LocalORDS_Insert_FullEmployee" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee#wsdl.interface(LocalORDS_Insert_FullEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>insertEmployeeFull</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="InsertEmployee">
+        <dgm:body borderWidth="2" arcRad="20" X="331" Y="581" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="321" Y="574" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="insertemployee_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/InsertEmployee#wsdl.interface(InsertEmployee)"/>
+        <dgm:outputPort name="LocalORDS_Insert_FullEmployee" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee#wsdl.interface(LocalORDS_Insert_FullEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="EmployeeInsert_OneWay">
+        <dgm:body borderWidth="2" arcRad="20" X="548" Y="26" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="538" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="employeeinsert_oneway_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/EmployeeInsert_OneWay#wsdl.interface(EmployeeInsert_OneWay)"/>
+        <dgm:outputPort name="LocalORDS_InsertEMP" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_InsertEMP#wsdl.interface(LocalORDS_InsertEMP_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="insertemployee_client_ep" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="993" X2="237" Y2="993"/>
+        <dgm:gSegment X1="237" Y1="993" X2="237" Y2="606"/>
+        <dgm:gSegment X1="237" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="employeeinsert_oneway_client_ep" target="EmployeeInsert_OneWay/employeeinsert_oneway_client" width="2">
+        <dgm:gSegment X1="168" Y1="51" X2="538" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="EmployeeInsert_OneWay/LocalORDS_InsertEMP" target="LocalORDS_InsertEMP" width="2">
+        <dgm:gSegment X1="688" Y1="51" X2="755" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="InsertEmployee/LocalORDS_Insert_FullEmployee" target="LocalORDS_Insert_FullEmployee" width="2">
+        <dgm:gSegment X1="471" Y1="606" X2="495" Y2="606"/>
+        <dgm:gSegment X1="495" Y1="606" X2="495" Y2="580"/>
+        <dgm:gSegment X1="495" Y1="580" X2="755" Y2="580"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_GET_PathParam_ReturnXML" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="167" X2="297" Y2="167"/>
+        <dgm:gSegment X1="297" Y1="167" X2="297" Y2="606"/>
+        <dgm:gSegment X1="297" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_GET_PathParam_ReturnJSON" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="285" X2="282" Y2="285"/>
+        <dgm:gSegment X1="282" Y1="285" X2="282" Y2="606"/>
+        <dgm:gSegment X1="282" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_GET_PathParam_ReturnNoPayload" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="403" X2="267" Y2="403"/>
+        <dgm:gSegment X1="267" Y1="403" X2="267" Y2="606"/>
+        <dgm:gSegment X1="267" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_POST_XML_ReturnXML" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="521" X2="252" Y2="521"/>
+        <dgm:gSegment X1="252" Y1="521" X2="252" Y2="606"/>
+        <dgm:gSegment X1="252" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_POST_JSON_ReturnXML" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="639" X2="192" Y2="639"/>
+        <dgm:gSegment X1="192" Y1="639" X2="192" Y2="606"/>
+        <dgm:gSegment X1="192" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_POST_XML_ReturnJSON" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="757" X2="207" Y2="757"/>
+        <dgm:gSegment X1="207" Y1="757" X2="207" Y2="606"/>
+        <dgm:gSegment X1="207" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="insertEmployeeFull_REST_POST_Multiple_Multiple" target="InsertEmployee/insertemployee_client" width="2">
+        <dgm:gSegment X1="168" Y1="875" X2="222" Y2="875"/>
+        <dgm:gSegment X1="222" Y1="875" X2="222" Y2="606"/>
+        <dgm:gSegment X1="222" Y1="606" X2="321" Y2="606"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

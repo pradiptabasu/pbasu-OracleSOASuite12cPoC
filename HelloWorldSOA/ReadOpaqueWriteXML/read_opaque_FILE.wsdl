@@ -1,0 +1,30 @@
+<wsdl:definitions
+     name="read_opaque_FILE"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/read_opaque_FILE"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/read_opaque_FILE"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:opaque="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
+     xmlns:pc="http://xmlns.oracle.com/pcbpel/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+    >
+  <plt:partnerLinkType name="Read_plt" >
+    <plt:role name="Read_role" >
+      <plt:portType name="tns:Read_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+    <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
+            xmlns="http://www.w3.org/2001/XMLSchema" >
+      <element name="opaqueElement" type="base64Binary" />
+    </schema>
+    </wsdl:types>
+    <wsdl:message name="Read_msg">
+        <wsdl:part name="opaque" element="opaque:opaqueElement"/>
+    </wsdl:message>
+    <wsdl:portType name="Read_ptt">
+        <wsdl:operation name="Read">
+            <wsdl:input message="tns:Read_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

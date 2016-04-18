@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="employeeList">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="employee">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="empid" type="xsd:int"/>
+              <xsd:element name="empname" type="xsd:string"/>
+              <xsd:element name="job" type="xsd:string"/>
+              <xsd:element name="managerid" type="xsd:int"/>
+              <xsd:element name="salary" type="xsd:int"/>
+              <xsd:element name="comm" type="xsd:int"/>
+              <xsd:element name="deptno" type="xsd:int"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://www.example.org" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="insertEmployeeFull_REST_PUT_XML_ReturnXML">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.example.org" schemaLocation="../Schemas/Employee.xsd"/>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="POST" soa:wsdlOperation="process">
+            <request>
+               <representation mediaType="application/xml" element="cns:employeeList" xmlns:cns="http://www.example.org"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:employeeList" xmlns:cns="http://www.example.org"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

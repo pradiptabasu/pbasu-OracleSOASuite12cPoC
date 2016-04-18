@@ -1,0 +1,118 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Mar 27 18:30:25 CEST 2012
+  Author:  Wisp
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="ReadOpaqueWriteXML"
+               targetNamespace="http://xmlns.oracle.com/DemoReadFile/ReadOpaqueWriteXML/ReadOpaqueWriteXML"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/DemoReadFile/ReadOpaqueWriteXML/ReadOpaqueWriteXML"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/read_opaque_FILE"
+         xmlns:ns2="http://myfilereader.smeets.nl/"
+         xmlns:ns3="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/write_xml_FILE"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/opaque/"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ui="http://xmlns.oracle.com/soa/designer">
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/DemoReadFile/ReadOpaqueWriteXML/read_opaque_FILE"
+          location="read_opaque_FILE.wsdl" importType="http://schemas.xmlsoap.org/wsdl/" ui:processWSDL="true"/>
+  <partnerLinks>
+    <partnerLink name="read_opaque_FILE" partnerLinkType="ns1:Read_plt"
+                 myRole="Read_role"/>
+    <partnerLink name="ParseFileSPRING.ParseFileBeanService"
+                 partnerLinkType="ns2:ParseFileSPRING.ParseFileBeanService"
+                 partnerRole="Iparsefile"/>
+    <partnerLink name="write_xml_FILE" partnerLinkType="ns3:Write_plt"
+                 partnerRole="Write_role"/>
+  </partnerLinks>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="receiveInput_Read_InputVariable"
+              messageType="ns1:Read_msg"/>
+    <variable name="InvokeParseFile_parse_InputVariable"
+              messageType="ns2:parseInput"/>
+    <variable name="InvokeWriteXML_Write_InputVariable"
+              messageType="ns3:Write_msg"/>
+    <variable name="InvokeParseFile_parse_OutputVariable"
+              messageType="ns2:parseOutput"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in ReadOpaqueWriteXML.wsdl) -->
+    <receive name="receiveReadOpaque" partnerLink="read_opaque_FILE"
+             portType="ns1:Read_ptt" operation="Read"
+             variable="receiveInput_Read_InputVariable" createInstance="yes"/>
+    <assign name="AssignWhatAndHow">
+      <copy>
+        <from>$receiveInput_Read_InputVariable.opaque</from>
+        <to>$InvokeParseFile_parse_InputVariable.parameters/arg0</to>
+      </copy>
+      <copy>
+        <from>';'</from>
+        <to>$InvokeParseFile_parse_InputVariable.parameters/arg1</to>
+      </copy>
+      <copy>
+        <from>1</from>
+        <to>$InvokeParseFile_parse_InputVariable.parameters/arg2</to>
+      </copy>
+      <copy>
+        <from>"Total"</from>
+        <to>$InvokeParseFile_parse_InputVariable.parameters/arg3</to>
+      </copy>
+    </assign>
+    <invoke name="InvokeParseFile"
+            partnerLink="ParseFileSPRING.ParseFileBeanService"
+            portType="ns2:Iparsefile" operation="parse"
+            inputVariable="InvokeParseFile_parse_InputVariable"
+            outputVariable="InvokeParseFile_parse_OutputVariable"
+            bpelx:invokeAsDetail="no"/>
+    <assign name="AssignOutput">
+      <copy>
+        <from>$InvokeParseFile_parse_OutputVariable.parameters</from>
+        <to>$InvokeWriteXML_Write_InputVariable.body</to>
+      </copy>
+    </assign>
+    <invoke name="InvokeWriteXML"
+            partnerLink="write_xml_FILE" portType="ns3:Write_ptt"
+            operation="Write"
+            inputVariable="InvokeWriteXML_Write_InputVariable"
+            bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

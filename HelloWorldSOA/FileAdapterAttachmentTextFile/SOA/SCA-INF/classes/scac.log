@@ -1,0 +1,12 @@
+2016-04-18 11:48:52.383/4.539 Oracle Coherence 12.1.3.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/D:/Oracle/SOA1213QuickStart/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2016-04-18 11:48:52.444/4.600 Oracle Coherence 12.1.3.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/D:/Oracle/SOA1213QuickStart/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2016-04-18 11:48:52.446/4.602 Oracle Coherence 12.1.3.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2016-04-18 11:48:52.449/4.605 Oracle Coherence 12.1.3.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2016-04-18 11:48:52.450/4.606 Oracle Coherence 12.1.3.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2016-04-18 11:48:52.451/4.607 Oracle Coherence 12.1.3.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.1.3.0.0 Build 52031
+ Grid Edition: Development mode
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+2016-04-18 11:48:52.595/4.751 Oracle Coherence GE 12.1.3.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory

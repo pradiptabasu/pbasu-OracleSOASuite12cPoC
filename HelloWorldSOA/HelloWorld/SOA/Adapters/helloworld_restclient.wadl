@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloWorld" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="helloworld_restclient">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloWorld" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+			<import namespace="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloWorld" schemaLocation="../Schemas/HelloWorld.xsd"/>
+		</schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="process">
+            <request>
+               <param name="input" style="query" soa:expression="$msg.payload/client:input" default="" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:processResponse" xmlns:cns="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloWorld"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

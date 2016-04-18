@@ -1,0 +1,80 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu Feb 18 20:29:18 IST 2016
+  Author:  prabasu
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="EmployeeInsert_OneWay"
+               targetNamespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/EmployeeInsert_OneWay"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/EmployeeInsert_OneWay"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_InsertEMP"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:ns2="http://www.example.org"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/EmployeeInsert_OneWay" location="../WSDLs/EmployeeInsert_OneWay.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="employeeinsert_oneway_client" partnerLinkType="client:EmployeeInsert_OneWay" myRole="EmployeeInsert_OneWayProvider"/>
+    <partnerLink name="LocalORDS_InsertEMP" partnerLinkType="ns1:LocalORDS_InsertEMP"
+                 partnerRole="LocalORDS_InsertEMPProvider"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:EmployeeInsert_OneWayRequestMessage"/>
+    <variable name="pempno" type="xsd:integer"/>
+    <variable name="Invoke1_InsertEMP_InputVariable" messageType="ns1:Rest_EmptyMessage"/>
+    <variable name="Invoke1_InsertEMP_OutputVariable" messageType="ns1:Rest_EmptyMessage"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in EmployeeInsert_OneWay.wsdl) -->
+    <receive name="receiveInput" partnerLink="employeeinsert_oneway_client" portType="client:EmployeeInsert_OneWay" operation="process" variable="inputVariable" createInstance="yes"/>
+    <assign name="Assign1">
+      <copy>
+        <from>$inputVariable.payload/ns2:employee/ns2:empid</from>
+        <to>$pempno</to>
+      </copy>
+    </assign>
+    <invoke name="Invoke1" bpelx:invokeAsDetail="no" partnerLink="LocalORDS_InsertEMP"
+            portType="ns1:LocalORDS_InsertEMP_ptt" operation="InsertEMP"
+            inputVariable="Invoke1_InsertEMP_InputVariable" outputVariable="Invoke1_InsertEMP_OutputVariable">
+      <bpelx:toProperties>
+        <bpelx:toProperty name="rest.binding.http.pempno">$pempno</bpelx:toProperty>
+      </bpelx:toProperties>
+    </invoke>
+  </sequence>
+</process>

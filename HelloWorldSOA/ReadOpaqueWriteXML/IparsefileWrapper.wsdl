@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="Iparsefile"
+     targetNamespace="http://myfilereader.smeets.nl/"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://myfilereader.smeets.nl/"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    >
+    <plnk:partnerLinkType name="ParseFileSPRING.ParseFileBeanService">
+        <plnk:role name="Iparsefile" portType="tns:Iparsefile"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://myfilereader.smeets.nl/" location="Iparsefile.wsdl"/>
+</wsdl:definitions>

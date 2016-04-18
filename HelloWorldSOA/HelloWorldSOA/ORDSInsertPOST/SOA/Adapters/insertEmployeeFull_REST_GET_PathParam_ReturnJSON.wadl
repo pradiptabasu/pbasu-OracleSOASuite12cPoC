@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://www.example.org" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="insertEmployeeFull_REST_GET_PathParam_ReturnJSON">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.example.org" schemaLocation="../Schemas/Employee.xsd"/>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="process">
+            <request>
+               <param name="empid" style="query" soa:expression="$msg.payload/ns1:employee/ns1:empid" default="" type="xsd:integer"/>
+               <param name="empname" style="query" soa:expression="$msg.payload/ns1:employee/ns1:empname" default="" type="xsd:string"/>
+               <param name="job" style="query" soa:expression="$msg.payload/ns1:employee/ns1:job" default="" type="xsd:string"/>
+               <param name="managerid" style="query" soa:expression="$msg.payload/ns1:employee/ns1:managerid" default="" type="xsd:int"/>
+               <param name="salary" style="query" soa:expression="$msg.payload/ns1:employee/ns1:salary" default="" type="xsd:int"/>
+               <param name="comm" style="query" soa:expression="$msg.payload/ns1:employee/ns1:comm" default="" type="xsd:int"/>
+               <param name="deptno" style="query" soa:expression="$msg.payload/ns1:employee/ns1:deptno" default="" type="xsd:int"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:employeeList" xmlns:cns="http://www.example.org"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

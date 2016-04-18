@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloHumanREST" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="hellohumanrest_client">RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloHumanREST" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+			<import namespace="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloHumanREST" schemaLocation="../Schemas/HelloHumanREST.xsd"/>
+		</schema>
+   </grammars>
+   <resources>
+      <resource path="/">
+         <method name="GET" soa:wsdlOperation="process">
+            <request>
+               <param name="input" style="query" soa:expression="$msg.payload/client:input" default="" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:processResponse" xmlns:cns="http://xmlns.oracle.com/HelloWorldSOA/HelloWorld/HelloHumanREST"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

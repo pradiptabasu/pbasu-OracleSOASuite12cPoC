@@ -1,0 +1,31 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="LocalORDS_Insert_FullEmployee"
+     targetNamespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee"
+     xmlns:tns="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee"
+     xmlns:inp1="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee"
+     xmlns:inp2="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="LocalORDS_Insert_FullEmployee">
+        <plnk:role name="LocalORDS_Insert_FullEmployeeProvider" portType="tns:LocalORDS_Insert_FullEmployee_ptt"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HelloWorldSOA/ORDSInsertPOST/LocalORDS_Insert_FullEmployee"
+             elementFormDefault="qualified">
+            <element name="empty">
+                <complexType/>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="Rest_EmptyMessage">
+        <wsdl:part name="Empty" element="tns:empty"/>
+    </wsdl:message>
+    <wsdl:portType name="LocalORDS_Insert_FullEmployee_ptt">
+        <wsdl:operation name="insertEmployeeFull">
+            <wsdl:input message="tns:Rest_EmptyMessage"/>
+            <wsdl:output message="tns:Rest_EmptyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

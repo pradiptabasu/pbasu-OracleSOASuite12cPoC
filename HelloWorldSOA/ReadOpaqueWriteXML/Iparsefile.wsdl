@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+     name="Iparsefile"
+     targetNamespace="http://myfilereader.smeets.nl/"
+     xmlns:tns="http://myfilereader.smeets.nl/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:ns0="http://myfilereader.smeets.nl/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://myfilereader.smeets.nl/types">
+            <xsd:complexType name="arrayListOfString">
+                <xsd:sequence>
+                    <xsd:element name="item" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema targetNamespace="http://myfilereader.smeets.nl/" xmlns:tns="http://myfilereader.smeets.nl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://myfilereader.smeets.nl/types">
+            <xsd:import namespace="http://myfilereader.smeets.nl/types"/>
+            <xsd:complexType name="parse">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:base64Binary"/>
+                    <xsd:element name="arg1" type="xsd:string"/>
+                    <xsd:element name="arg2" type="xsd:int"/>
+                    <xsd:element name="arg3" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="parse" type="tns:parse"/>
+            <xsd:complexType name="parseResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" minOccurs="0" maxOccurs="unbounded" type="ns1:arrayListOfString"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="parseResponse" type="tns:parseResponse"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="parseInput">
+        <wsdl:part name="parameters" element="tns:parse"/>
+    </wsdl:message>
+    <wsdl:message name="parseOutput">
+        <wsdl:part name="parameters" element="tns:parseResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="Iparsefile">
+        <wsdl:operation name="parse">
+            <wsdl:input message="tns:parseInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+            <wsdl:output message="tns:parseOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action=""/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
