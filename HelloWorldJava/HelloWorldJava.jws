@@ -27,6 +27,8 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="HelloWorld/HelloWorld.jpr"/></hash>
+      <hash><url n="URL" path="HelloWorldEJB/HelloWorldEJB.jpr"/></hash>
+      <hash><url n="URL" path="HelloWorldEJBClient/HelloWorldEJBClient.jpr"/></hash>
       <hash><url n="URL" path="HelloWorldREST/HelloWorldREST.jpr"/></hash>
       <hash><url n="URL" path="HelloWorldSOAP/HelloWorldSOAP.jpr"/></hash>
    </list>

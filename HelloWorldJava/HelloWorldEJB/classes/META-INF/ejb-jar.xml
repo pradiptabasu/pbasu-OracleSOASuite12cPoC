@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+         version="3.0" xmlns="http://java.sun.com/xml/ns/javaee">
+    <enterprise-beans>
+        <session>
+            <ejb-name>LibraryStateless</ejb-name>
+        </session>
+        <session>
+            <ejb-name>LibraryStatelessWithDelay</ejb-name>
+        </session>
+        <session>
+            <ejb-name>LibraryStateful</ejb-name>
+        </session>
+        <session>
+            <ejb-name>LibraryBooksEntityStateless</ejb-name>
+        </session>
+        <session>
+            <ejb-name>LibraryBooksEntityStateful</ejb-name>
+        </session>
+        <message-driven>
+            <ejb-name>LibraryBooksEntityMessageDrivenBean</ejb-name>
+        </message-driven>
+    </enterprise-beans>
+    <interceptors>
+        <interceptor>
+            <interceptor-class>com.pradipta.ejb.poc.interceptor.LibraryBooksEntityStatelessInterceptor</interceptor-class>
+        </interceptor>
+    </interceptors>
+</ejb-jar>

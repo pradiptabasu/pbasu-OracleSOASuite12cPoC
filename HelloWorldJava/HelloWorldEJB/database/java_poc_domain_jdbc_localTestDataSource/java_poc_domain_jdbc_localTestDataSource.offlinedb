@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="databaseType" v="Oracle Database"/>
+      <value n="databaseVersion" v="120"/>
+   </hash>
+   <value n="id" v="f71d9c6b-f3bb-43cc-aabe-79a8beb30a40"/>
+   <value n="name" v="java_poc_domain_jdbc_localTestDataSource"/>
+</ProviderSettings>

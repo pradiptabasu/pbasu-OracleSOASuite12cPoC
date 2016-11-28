@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<weblogic-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.4/weblogic-ejb-jar.xsd"
+                  xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar">
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryStateless</ejb-name>
+        <stateless-session-descriptor/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryStatelessWithDelay</ejb-name>
+        <stateless-session-descriptor/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryStateful</ejb-name>
+        <stateful-session-descriptor/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryBooksEntityStateless</ejb-name>
+        <stateless-session-descriptor/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryBooksEntityStateful</ejb-name>
+        <stateful-session-descriptor/>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>LibraryBooksEntityMessageDriven</ejb-name>
+        <message-driven-descriptor>
+            <destination-jndi-name></destination-jndi-name>
+        </message-driven-descriptor>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
